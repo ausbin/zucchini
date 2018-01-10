@@ -4,14 +4,16 @@ from .threaded_grader import ThreadedGrader
 from .prompt_grader import PromptGrader
 from .open_file_grader import OpenFileGrader
 from .libcheck_grader import LibcheckGrader
+from .junit_json_grader import JUnitJSONGrader
 
 __all__ = ['InvalidGraderConfigError', 'GraderInterface', 'Part',
            'ThreadedGrader', 'PromptGrader', 'OpenFileGrader',
-           'LibcheckGrader']
+           'LibcheckGrader', 'JUnitJSONGrader']
 
 _GRADERS = (
     PromptGrader,
     OpenFileGrader,
     LibcheckGrader,
+    JUnitJSONGrader,
 )
 AVAILABLE_GRADERS = {cls.__name__: cls for cls in _GRADERS}
